@@ -5,9 +5,9 @@ namespace JustEatIt.DrinkAPI.Services
     public interface IDrinkService
     {
         Task<List<Drink>> GetAllDrinks();
-        Task<Drink> GetDrinkById(int id);
+        Task<Drink> GetDrinkById(string id);
         Task UpdateDrink(Drink drink);
-        Task DeleteDrink(int id);
+        Task DeleteDrink(string id);
         Task<Drink> CreateDrink(Drink drink);
     }
 }

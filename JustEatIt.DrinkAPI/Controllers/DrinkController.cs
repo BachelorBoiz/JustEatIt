@@ -36,8 +36,16 @@ namespace JustEatIt.DrinkAPI.Controllers
 
         // POST api/<DrinkController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult CreateDrink([FromBody] Drink drink)
         {
+            if (drink == null)
+            {
+                return BadRequest();
+            }
+
+            _drinkService.CreateDrink(drink);
+
+            return Ok();
         }
 
         // PUT api/<DrinkController>/5

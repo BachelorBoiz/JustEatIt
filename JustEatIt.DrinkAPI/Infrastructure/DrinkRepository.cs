@@ -22,24 +22,27 @@ namespace JustEatIt.DrinkAPI.Infrastructure
         public async Task<List<Drink>> GetAllDrinks() =>
             await _drinks.Find(_ => true).ToListAsync();
 
-        public Task<Drink> GetDrinkById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Drink> GetDrinkById(string id) =>
+            await _drinks.Find(x => x.Id == id).FirstOrDefaultAsync();
+
 
         public Task UpdateDrink(Drink drink)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteDrink(int id)
+        public Task DeleteDrink(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Drink> CreateDrink(Drink drink)
+        public async Task<Drink> CreateDrink(Drink drink)
         {
-            throw new NotImplementedException();
+            await _drinks.InsertOneAsync(drink);
+
+            var newDrink = await GetDrinkById(drink.Id);
+            return newDrink;
         }
+        
     }
 }

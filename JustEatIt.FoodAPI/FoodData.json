@@ -1,0 +1,32 @@
+[
+{
+"Name": "Classic Burger",
+"Ingredients": "Beef patty, lettuce, tomato, onion, pickles, ketchup, mayo, sesame seed bun",
+"Price": 5.99
+},
+{
+"Name": "Cheeseburger",
+"Ingredients": "Beef patty, cheddar cheese, lettuce, tomato, onion, pickles, ketchup, mayo, sesame seed bun",
+"Price": 6.49
+},
+{
+"Name": "Bacon Cheeseburger",
+"Ingredients": "Beef patty, bacon, cheddar cheese, lettuce, tomato, onion, pickles, ketchup, mayo, sesame seed bun",
+"Price": 7.49
+},
+{
+"Name": "French Fries",
+"Ingredients": "Potatoes, salt",
+"Price": 2.49
+},
+{
+"Name": "Onion Rings",
+"Ingredients": "Onions, flour, egg, bread crumbs, salt",
+"Price": 3.99
+},
+{
+"Name": "Chicken Wings",
+"Ingredients": "Chicken wings, flour, baking powder, salt, hot sauce, butter",
+"Price": 8.99
+}
+]
