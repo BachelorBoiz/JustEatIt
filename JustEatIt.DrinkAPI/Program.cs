@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
     .RegisterService<IDrinkService>()
+    .AddFiltering()
     .AddQueryType<Query>();
 
 builder.Services.AddScoped<IDrinkService, DrinkService>();
