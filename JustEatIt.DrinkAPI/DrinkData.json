@@ -1,0 +1,93 @@
+[
+{
+"Name": "Coca-Cola",
+"Description": "Classic carbonated soft drink",
+"Price": 2.5,
+"Ml": "330",
+"Type": "Soda"
+},
+{
+"Name": "Pepsi",
+"Description": "Carbonated cola soft drink",
+"Price": 2,
+"Ml": "355",
+"Type": "Soda"
+},
+{
+"Name": "Fanta",
+"Description": "Orange-flavored carbonated soft drink",
+"Price": 2.5,
+"Ml": "330",
+"Type": "Soda"
+},
+{
+"Name": "Sprite",
+"Description": "Lemon-lime flavored carbonated soft drink",
+"Price": 2.5,
+"Ml": "330",
+"Type": "Soda"
+},
+{
+"Name": "Schweppes Tonic Water",
+"Description": "Carbonated tonic water",
+"Price": 2.5,
+"Ml": "330",
+"Type": "Soda"
+},
+{
+"Name": "Caffe Latte",
+"Description": "Espresso with steamed milk",
+"Price": 3.5,
+"Ml": "350",
+"Type": "Coffee"
+},
+{
+"Name": "Americano",
+"Description": "Espresso with hot water",
+"Price": 2.5,
+"Ml": "250",
+"Type": "Coffee"
+},
+{
+"Name": "English Breakfast Tea",
+"Description": "Black tea blend",
+"Price": 2.5,
+"Ml": "250",
+"Type": "Tea"
+},
+{
+"Name": "Green Tea",
+"Description": "Non-fermented tea",
+"Price": 3,
+"Ml": "300",
+"Type": "Tea"
+},
+{
+"Name": "Voss",
+"Description": "Artesian water from Norway",
+"Price": 3,
+"Ml": "375",
+"Type": "Water"
+},
+{
+"Name": "Evian",
+"Description": "Mineral water from France",
+"Price": 2.5,
+"Ml": "500",
+"Type": "Water"
+},
+{
+"Name": "Orange Juice",
+"Description": "Freshly squeezed orange juice",
+"Price": 3,
+"Ml": "300",
+"Type": "Juice"
+},
+{
+"Name": "Apple Juice",
+"Description": "Freshly squeezed apple juice",
+"Price": 3,
+"Ml": "300",
+"Type": "Juice"
+}
+]
