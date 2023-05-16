@@ -16,23 +16,23 @@ public class FoodService : IFoodService
         return await _repository.GetAllFoods();
     }
 
-    public Task<Food> GetFoodById(int id)
+    public async Task<Food> GetFoodById(string id)
     {
-        throw new NotImplementedException();
+        return await _repository.GetFoodById(id);
     }
 
-    public Task UpdateFood(Food food)
+    public async Task UpdateFood(Food food)
     {
-        throw new NotImplementedException();
+        await _repository.UpdateFood(food);
     }
 
-    public Task DeleteDrink(int id)
+    public async Task DeleteFood(string id)
     {
-        throw new NotImplementedException();
+        await _repository.DeleteFood(id);
     }
 
-    public Task<Food> CreateFood(Food food)
+    public async Task<Food> CreateFood(Food food)
     {
-        throw new NotImplementedException();
+        return await _repository.CreateFood(food);
     }
 }

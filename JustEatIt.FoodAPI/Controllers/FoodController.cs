@@ -25,33 +25,66 @@ namespace JustEatIt.FoodAPI.Controllers
         public async Task<List<Food>> Get()
         {
             var foods = await _foodService.GetAllFoods();
-
             return foods;
         }
 
         // GET api/<FoodController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(string id)
         {
-            return "value";
+            var food = await _foodService.GetFoodById(id);
+
+            if (food == null)
+            {
+                return NotFound();
+            }
+            return Ok(food);
         }
 
         // POST api/<FoodController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult CreateFood([FromBody] Food food)
         {
+            if (food == null)
+            {
+                return BadRequest();
+            }
+
+            _foodService.CreateFood(food);
+            
+            return Ok();
         }
 
         // PUT api/<FoodController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(string id, [FromBody] Food food)
         {
+            if (id != food.Id)
+            {
+                return BadRequest();
+            }
+            var existingFood = await _foodService.GetFoodById(id);
+            if (existingFood == null)
+            {
+                return NotFound();
+            }
+
+            await _foodService.UpdateFood(food);
+            return NoContent();
         }
 
         // DELETE api/<FoodController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
+            var existingFood = await _foodService.GetFoodById(id);
+            if (existingFood == null)
+            {
+                return NotFound();
+            }
+
+            await _foodService.DeleteFood(id);
+            return NoContent();
         }
     }
 }

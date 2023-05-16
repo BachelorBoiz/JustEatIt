@@ -5,8 +5,8 @@ namespace JustEatIt.FoodAPI.Services;
 public interface IFoodService
 {
     Task<List<Food>> GetAllFoods();
-    Task<Food> GetFoodById(int id);
+    Task<Food> GetFoodById(string id);
     Task UpdateFood(Food food);
-    Task DeleteDrink(int id);
+    Task DeleteFood(string id);
     Task<Food> CreateFood(Food food);
 }

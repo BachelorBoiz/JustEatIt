@@ -17,19 +17,19 @@ namespace JustEatIt.DrinkAPI.Services
             return await _repository.GetAllDrinks();
         }
 
-        public Task<Drink> GetDrinkById(string id)
+        public async Task<Drink> GetDrinkById(string id)
         {
-            throw new NotImplementedException();
+            return await _repository.GetDrinkById(id);
         }
 
-        public Task UpdateDrink(Drink drink)
+        public async Task UpdateDrink(Drink drink)
         {
-            throw new NotImplementedException();
+            await _repository.UpdateDrink(drink);
         }
 
-        public Task DeleteDrink(string id)
+        public async Task DeleteDrink(string id)
         {
-            throw new NotImplementedException();
+            await _repository.DeleteDrink(id);
         }
 
         public async Task<Drink> CreateDrink(Drink drink)

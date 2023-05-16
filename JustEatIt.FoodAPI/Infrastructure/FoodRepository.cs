@@ -25,23 +25,34 @@ public class FoodRepository : IFoodRepository
         return await _foods.Find(_ => true).ToListAsync();
     }
 
-    public Task<Food> GetFoodById(int id)
+    public async Task<Food> GetFoodById(string id)
     {
-        throw new NotImplementedException();
+        return await _foods.Find(x => x.Id == id).FirstOrDefaultAsync();
     }
 
-    public Task UpdateFood(Food food)
+    public async Task UpdateFood(Food food)
     {
-        throw new NotImplementedException();
+        //The Eq method is used to create an equality filter based on the food's ID.
+        var filter = Builders<Food>.Filter.Eq(x => x.Id, food.Id);
+        var update = Builders<Food>.Update
+            .Set(x => x.Name, food.Name)
+            .Set(x => x.Ingredients, food.Ingredients)
+            .Set(x => x.Price, food.Price);
+
+        await _foods.UpdateOneAsync(filter, update);
     }
 
-    public Task DeleteFood(int id)
+    public async Task DeleteFood(string id)
     {
-        throw new NotImplementedException();
+        var filter = Builders<Food>.Filter.Eq(x => x.Id, id);
+        await _foods.DeleteOneAsync(filter);
     }
 
-    public Task<Food> CreateFood(Food food)
+    public async Task<Food> CreateFood(Food food)
     {
-        throw new NotImplementedException();
+        await _foods.InsertOneAsync(food);
+
+        var newFood = await GetFoodById(food.Id);
+        return newFood;
     }
 }

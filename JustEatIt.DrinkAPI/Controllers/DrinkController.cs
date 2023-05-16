@@ -29,9 +29,15 @@ namespace JustEatIt.DrinkAPI.Controllers
 
         // GET api/<DrinkController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(string id)
         {
-            return "value";
+            var drink = await _drinkService.GetDrinkById(id);
+            if (drink == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(drink);
         }
 
         // POST api/<DrinkController>
@@ -50,14 +56,35 @@ namespace JustEatIt.DrinkAPI.Controllers
 
         // PUT api/<DrinkController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(string id, [FromBody] Drink drink)
         {
+            if (id != drink.Id)
+            {
+                return BadRequest();
+            }
+
+            var existingDrink = await _drinkService.GetDrinkById(id);
+            if (existingDrink == null)
+            {
+                return NotFound();
+            }
+
+            await _drinkService.UpdateDrink(drink);
+            return NoContent();
         }
 
         // DELETE api/<DrinkController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
+            var existingDrink = await _drinkService.GetDrinkById(id);
+            if (existingDrink == null)
+            {
+                return NotFound();
+            }
+
+            await _drinkService.DeleteDrink(id);
+            return NoContent();
         }
     }
 }
