@@ -43,14 +43,14 @@ namespace JustEatIt.FoodAPI.Controllers
 
         // POST api/<FoodController>
         [HttpPost]
-        public IActionResult CreateFood([FromBody] Food food)
+        public async Task<IActionResult> CreateFood([FromBody] Food food)
         {
             if (food == null)
             {
                 return BadRequest();
             }
 
-            _foodService.CreateFood(food);
+            await _foodService.CreateFood(food);
             
             return Ok();
         }

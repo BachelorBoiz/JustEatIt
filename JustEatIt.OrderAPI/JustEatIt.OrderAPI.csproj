@@ -6,17 +6,28 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>2f66b3b7-fec3-4eb3-a6b3-88f52ff8940e</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.0.5" />
+    <PackageReference Include="HotChocolate.Data" Version="13.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
+    <PackageReference Include="MongoDB.Bson" Version="2.19.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JustEatIt.DrinkAPI\JustEatIt.DrinkAPI.csproj" />
+    <ProjectReference Include="..\JustEatIt.FoodAPI\JustEatIt.FoodAPI.csproj" />
   </ItemGroup>
 
 </Project>
