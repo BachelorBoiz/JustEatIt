@@ -15,7 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
     .AddFiltering()
     .RegisterService<IOrderService>()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .InitializeOnStartup()
+    .PublishSchemaDefinition(c => c.SetName("order"));
 
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddSingleton<IOrderRepository, OrderRepository>();

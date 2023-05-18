@@ -19,4 +19,15 @@ services:
       dockerfile: "JustEatIt.OrderAPI/Dockerfile"
     ports:
       - 7002:80
+  gateway:
+    build:
+      context: .
+      dockerfile: "JustEatIt.GraphQL.Gateway/Dockerfile"
+    ports:
+      - 7003:80
+    depends_on:
+      - foodapi
+      - drinkapi
+      - orderapi
+
   

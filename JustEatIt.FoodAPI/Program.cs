@@ -15,7 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
     .AddFiltering()
     .RegisterService<IFoodService>()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .InitializeOnStartup()
+    .PublishSchemaDefinition(c => c.SetName("food"));
 
 builder.Services.AddScoped<IFoodService, FoodService>();
 builder.Services.AddSingleton<IFoodRepository, FoodRepository>();

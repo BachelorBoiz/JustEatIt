@@ -14,7 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLServer()
     .RegisterService<IDrinkService>()
     .AddFiltering()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .InitializeOnStartup()
+    .PublishSchemaDefinition(c => c.SetName("drink")); ;
 
 builder.Services.AddScoped<IDrinkService, DrinkService>();
 builder.Services.AddSingleton<IDrinkRepository, DrinkRepository>();

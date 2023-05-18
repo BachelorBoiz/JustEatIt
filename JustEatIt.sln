@@ -5,11 +5,13 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatIt.FoodAPI", "JustEatIt.FoodAPI\JustEatIt.FoodAPI.csproj", "{7C451E0A-0453-48EE-B943-281FA6CA729F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatIt.SharedModels", "JustEatIt.SharedModels\JustEatIt.SharedModels.csproj", "{C608E5B3-BDC7-4EF9-8C8E-FBB9F7C31CCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustEatIt.SharedModels", "JustEatIt.SharedModels\JustEatIt.SharedModels.csproj", "{C608E5B3-BDC7-4EF9-8C8E-FBB9F7C31CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatIt.DrinkAPI", "JustEatIt.DrinkAPI\JustEatIt.DrinkAPI.csproj", "{1B279F89-D229-443A-B224-66307D489B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustEatIt.DrinkAPI", "JustEatIt.DrinkAPI\JustEatIt.DrinkAPI.csproj", "{1B279F89-D229-443A-B224-66307D489B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatIt.OrderAPI", "JustEatIt.OrderAPI\JustEatIt.OrderAPI.csproj", "{C3B0B649-3698-4F11-A34D-1BD2BC7C4714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustEatIt.OrderAPI", "JustEatIt.OrderAPI\JustEatIt.OrderAPI.csproj", "{C3B0B649-3698-4F11-A34D-1BD2BC7C4714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustEatIt.GraphQL.Gateway", "JustEatIt.GraphQL.Gateway\JustEatIt.GraphQL.Gateway.csproj", "{CB5E5C85-37E2-4DC0-AB67-DD63D2B37946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C3B0B649-3698-4F11-A34D-1BD2BC7C4714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3B0B649-3698-4F11-A34D-1BD2BC7C4714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3B0B649-3698-4F11-A34D-1BD2BC7C4714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5E5C85-37E2-4DC0-AB67-DD63D2B37946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5E5C85-37E2-4DC0-AB67-DD63D2B37946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5E5C85-37E2-4DC0-AB67-DD63D2B37946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5E5C85-37E2-4DC0-AB67-DD63D2B37946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
